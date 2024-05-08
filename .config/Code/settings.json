@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-perfect-mocha",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'monospace', monospace",
+    "security.workspace.trust.untrustedFiles": "open",
+    "RainbowBrackets.depreciation-notice": false,
+    "godotTools.editorPath.godot3": "~/Godot/3.5.3.64",
+    "godotTools.editorPath.godot4": "~/Godot/4.2.2.x86_64",
+    "godotTools.inlayHints.gdscript": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "error"
+    ]
+}
