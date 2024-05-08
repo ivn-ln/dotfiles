@@ -740,7 +740,7 @@ awful.spawn.easy_async("pgrep picom -a", function(stdout)
 end)
 awful.spawn.easy_async("pgrep nitrogen -a", function(stdout)
     if not string.find(stdout, "nitrogen") then
-        awful.spawn.with_shell("nitrogen --restore")
+        awful.spawn.with_shell("nitrogen --set-zoom-fill --random ~/Wallpaper/ --save")
     end
 end)
 awful.spawn.easy_async("pgrep kitty -a", function(stdout)
