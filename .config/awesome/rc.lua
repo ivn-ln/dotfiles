@@ -764,5 +764,10 @@ awful.spawn.easy_async("pgrep floorp -a", function(stdout)
     end
 end)
 awful.spawn.with_shell("xset s 300")
-awful.spawn.with_shell("sleep 1.0s && xss-lock -n /usr/share/.scripts/dim-screen.sh")
+awful.spawn.with_shell("sleep 1.0s && xss-lock -n /usr/share/.scripts/dim-screen.sh xlock")
+awful.spawn.with_shell("chmod a+wr brightness")
+awful.spawn.with_shell("sudo bash ~/brightness.sh")
+awful.spawn.with_shell("bt-adapter --adapter=illarn --set Pairable 1")
+awful.spawn.with_shell("bt-adapter --adapter=illarn --set Powered 1")
 naughty.notify({title = "AwesomeWM", text = "Reloaded successfully"})
+
