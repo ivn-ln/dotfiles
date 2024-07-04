@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ $(pgrep ^kalendar$ | wc -c) -eq 0 ]
+if [ $(pgrep com.github.cal | wc -c) -eq 0 ]
 then
-	exec kalendar&
+	exec & flatpak run com.github.calo001.luna
 else
-	exec pkill -KILL kalendar
+	exec pkill -KILL com.github.cal
 fi

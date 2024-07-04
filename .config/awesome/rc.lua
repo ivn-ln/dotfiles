@@ -595,7 +595,7 @@ awful.rules.rules = {
           "veromix",
           "xtightvncviewer",
           "Pavucontrol",
-          "kalendar"},
+          },
 
         -- Note that the name property shown in xprop might be set slightly after creation of the client
         -- and the name shown there might not match defined rules here.
@@ -617,10 +617,13 @@ awful.rules.rules = {
       properties = {placement = awful.placement.top_right, border_width = 0, immobilized = true}},
       {rule_any = {
         class = {
-            "kalendar"
-        }
+            "com.github.calo001.luna"
+        },
+	name = {
+		"com.github.calo001.luna"
+	}
       },
-      properties = {placement = awful.placement.top, border_width = 0, immobilized = true}},
+      properties = {floating = true, ontop = true, placement = awful.placement.top, border_width = 0, immobilized = true, width = 1200, height = 1000}},
       {rule_any = {
         class = {
             "Polybar"
@@ -718,7 +721,7 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 client.connect_signal("unfocus", function (c)
-    if c.class == "Blueman-manager" or c.class == "Pavucontrol" or c.class == "kalendar" then
+    if c.class == "Blueman-manager" or c.class == "Pavucontrol" or c.class == "com.github.calo001.luna" then
         c:kill()
     end
 end)
@@ -764,9 +767,12 @@ awful.spawn.easy_async("pgrep floorp -a", function(stdout)
     end
 end)
 awful.spawn.with_shell("xset s 300")
+awful.spawn.with_shell("xinput set-prop 14 325 1")
+awful.spawn.with_shell("xinput set-prop 14 302 1")
+awful.spawn.with_shell("xinput set-prop 14 311 1")
 awful.spawn.with_shell("sleep 1.0s && xss-lock -n /usr/share/.scripts/dim-screen.sh xlock")
-awful.spawn.with_shell("chmod a+wr brightness")
-awful.spawn.with_shell("sudo bash ~/brightness.sh")
+awful.spawn.with_shell("chmod a+wr ~/brightness.sh")
+awful.spawn.with_shell("sh ~/brightness.sh")
 awful.spawn.with_shell("bt-adapter --adapter=illarn --set Pairable 1")
 awful.spawn.with_shell("bt-adapter --adapter=illarn --set Powered 1")
 naughty.notify({title = "AwesomeWM", text = "Reloaded successfully"})

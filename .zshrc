@@ -78,9 +78,9 @@ plugins=(
   git
   sudo
   dirhistory
+  zsh-nvm
   zsh-autosuggestions
   zsh-syntax-highlighting
-  jovial
   copypath
 )
 
@@ -114,16 +114,22 @@ source $ZSH/oh-my-zsh.sh
 alias zshrc="vim ~/.zshrc"
 alias doc="sudo docker-compose"
 alias refresh="source ~/.zshrc"
-alias n="sudo nala"
-alias telegram="flatpak run org.telegram.desktop > /dev/null 2>&1&"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+alias telegram="flatpak run org.telegram.desktop >> /dev/null 2>&1&"
 alias cd="z"
 alias speedtest="speedtest-cli"
 alias grep="grep -i"
 alias fzf="fzf --exact"
-alias login="systemctl start graphical.target"
+alias android-studio="~/android-studio/bin/studio.sh >> /dev/null 2>&1&"
+alias adb=""
+alias godot3="~/Godot/3.5.3.64 >> /dev/null 2>&1&"
+alias godot4="~/Godot/4.2.2.x86_64 >> /dev/null 2>&1&"
+alias untar="tar -xvzf"
+alias totar="tar czf"
+alias tozip="zip -r"
 
 source ~/.nvm/nvm.sh
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
-
+eval "$(sudo sh ~/brightness.sh)"
+export QT_QPA_PLATFORMTHEME=qt5ct
